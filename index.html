@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Pyhue by GuoJing</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Pyhue</h1>
+        <p>python sdk for philips hue</p>
+
+        <p class="view"><a href="https://github.com/GuoJing/pyhue">View the Project on GitHub <small>GuoJing/pyhue</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/GuoJing/pyhue/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/GuoJing/pyhue/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/GuoJing/pyhue">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="pyhue" class="anchor" href="#pyhue"><span class="octicon octicon-link"></span></a>pyhue</h1>
+
+<p>This is a simple python sdk for philips hue (personal lightting system).</p>
+
+<p>Version 0.1.2 is RELEASED</p>
+
+<h1>
+<a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to use</h1>
+
+<p>This should be very easy.</p>
+
+<h2>
+<a name="prepare" class="anchor" href="#prepare"><span class="octicon octicon-link"></span></a>Prepare</h2>
+
+<ol>
+<li>git clone the code</li>
+<li>python setup.py install</li>
+</ol><h2>
+<a name="config" class="anchor" href="#config"><span class="octicon octicon-link"></span></a>Config</h2>
+
+<p>If you are not write the config file, it will generate auto with ip 0.0.0.0 . You need to config it.</p>
+
+<p>Simple way:</p>
+
+<pre><code>python
+from pyhue.nupnp import get_hue
+h = get_hue()
+</code></pre>
+
+<p>This will gen config.yml auto and auto fill the station_ip and deveice_type.</p>
+
+<p>Or:</p>
+
+<pre><code>python
+from pyhue import Hue
+h = Hue()
+</code></pre>
+
+<p>Then there will be a config.yml file in $HOMEDIR/.hue/.</p>
+
+<h2>
+<a name="auth" class="anchor" href="#auth"><span class="octicon octicon-link"></span></a>Auth</h2>
+
+<p>This will geb/load the config file at $HOMEDIR</p>
+
+<pre><code>from pyhue import hue
+hue = Hue()
+</code></pre>
+
+<p>or</p>
+
+<pre><code>hue = Hue(filename='test.yml')
+</code></pre>
+
+<p>or</p>
+
+<pre><code>hue = Hue(ip, devicetype)
+</code></pre>
+
+<p>Then run (only the first time)</p>
+
+<pre><code>hue = auth()
+</code></pre>
+
+<p><strong>get to your hue and press the BUTTON</strong></p>
+
+<p>and Done</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>next time you just can do like the main.py</p>
+
+<pre><code>lights = hue.lights
+light = lights[0]
+light.on()
+light.off()
+light.set_state()
+</code></pre>
+
+<p>can you also could use hue object</p>
+
+<pre><code>hue.create_schedule()
+hue.get_new_lights()
+</code></pre>
+
+<h2>
+<a name="next" class="anchor" href="#next"><span class="octicon octicon-link"></span></a>Next</h2>
+
+<p>main.py have some simple samples.</p>
+
+<h2>
+<a name="chinese" class="anchor" href="#chinese"><span class="octicon octicon-link"></span></a>Chinese</h2>
+
+<ol>
+<li>下载代码</li>
+<li>去 <a href="http://www.meethue.com/api/nupnp">www.meethue.com/api/nupnp</a> 页面获取信息</li>
+<li>修改config文件, $HOMEDIR/.hue/config.yml</li>
+<li>使用代码，h=Hue()</li>
+<li>h.auth()认证，并按下hue的按钮</li>
+<li>认证完毕</li>
+</ol><h2>
+<a name="contact" class="anchor" href="#contact"><span class="octicon octicon-link"></span></a>Contact</h2>
+
+<p>soundbbg at gmail</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/GuoJing">GuoJing</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("42721249");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
