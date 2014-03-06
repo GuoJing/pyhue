@@ -94,3 +94,7 @@ Chinese
 Contact
 -----
 soundbbg at gmail
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GuoJing/pyhue/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
